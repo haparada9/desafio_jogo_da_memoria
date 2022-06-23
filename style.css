@@ -7,7 +7,10 @@
 body {
     height: 100vh;
     display: flex;
-    background-color: rgb(46, 158, 46)
+    background-image: url(./img/gitbackground.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .memory-game {
@@ -16,6 +19,7 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    perspective: 1000px;
 }
 
 .card {
@@ -26,6 +30,13 @@ body {
     box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.3);
     cursor: pointer;
     transform: scale(1);
+    transform-style: preserve-3d; /* Não deixa o elemento achatado no plano*/
+    transition: transform .9s;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform 0.3s;
 }
 
 .card-front,
@@ -35,6 +46,17 @@ body {
     padding: 2px;
     position: absolute;
     border-radius: 5px;
-    background: #ffff
+    background: #ffff;
+    backface-visibility: hidden; /* propriedade que retira o verso do elemento*/
 
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+/* flip card animation */
+
+.card.flip {
+    transform: rotateY(180deg);
 }
