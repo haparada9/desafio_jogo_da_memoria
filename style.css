@@ -7,7 +7,7 @@
 body {
     height: 100vh;
     display: flex;
-    background-image: url(./img/gitbackground.gif);
+    background-image: url(./img/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,6 +32,7 @@ body {
     transform: scale(1);
     transform-style: preserve-3d; /* Não deixa o elemento achatado no plano*/
     transition: transform .9s;
+    
 }
 
 .card:active {
